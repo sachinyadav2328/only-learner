@@ -1,10 +1,16 @@
 const {Router} = require("express");
-
-
+const { adminModel } = require("../db");
 const adminRouter = Router();
 
-
-adminRouter.post("/signup",function(req,res){
+adminRouter.post("/signup",async function(req,res){
+    const {fullName,email, password} = req.body
+   
+    const hashedPassword = await bcrypt.hash(password,5)
+    adminModel.create({
+        email: email,
+        password:hashedPassword,
+        fullName:fullName
+    })
     res.json({
         message:"admin signup"
     })
@@ -36,5 +42,5 @@ adminRouter.get("/course/allcourses",function(req,res){
 })
 
 module.exports={
-    adminRoute: adminRouter,
+    adminRouter: adminRouter,
 }

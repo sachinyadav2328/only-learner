@@ -1,4 +1,6 @@
-
+const {Router} = require("express");
+const { courseModel } = require("../db");
+const courseRouter = Router();
 
 courseRouter.post("/purchase", function(req,res){
     //expect the user to pay you money
