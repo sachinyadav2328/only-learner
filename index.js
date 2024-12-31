@@ -5,7 +5,7 @@ const { courseRouter } = require('./routes/course');
 const mongoose = require("mongoose");
 
 const app = express();
-
+app.use(express.json());
 app.use("/api/user",userRouter);
 app.use("/api/admin",adminRouter);
 app.use("/api/course",courseRouter);
@@ -17,4 +17,4 @@ async function main(){
 }
 
 main()
-console.log("connected to db")
+console.log("listing to port 3000")

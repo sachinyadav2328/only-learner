@@ -1,25 +1,48 @@
 const {Router} = require("express");
-const { adminModel } = require("../db");
+const { adminModel, userModel } = require("../db");
+const jwt = require('jsonwebtoken');
+const JWT_ADMIN_PASSWORD = "adminPassword"
 const adminRouter = Router();
 
 adminRouter.post("/signup",async function(req,res){
-    const {fullName,email, password} = req.body
+    const {email, password,firstName,lastName} = req.body  // zod
    
-    const hashedPassword = await bcrypt.hash(password,5)
+    // const hashedPassword = await bcrypt.hash(password,5)
+    // put in try catch 
     adminModel.create({
-        email: email,
-        password:hashedPassword,
-        fullName:fullName
+        email,
+        password,
+        firstName,
+        lastName,
     })
     res.json({
-        message:"admin signup"
+        message:"admin signup successfully"
     })
 })
 
-adminRouter.post("/signin",function(req,res){
-    res.json({
-        message:"admin signin"
+adminRouter.post("/signin",async function(req,res){
+    const {email, password } = req.body
+  // password should hashes and we connect compare user provide password and the database
+
+    const response = await userModel.find({
+        email:email,
+        passsword:password
     })
+   
+    if(response){
+        const token = jwt.sign({
+            id:response._id
+        },JWT_ADMIN_PASSWORD)
+    
+        res.json({
+            token:token
+        })
+    }else{
+        res.status(403).json({
+            message:"incorrect credential"
+        })
+    }
+   
 })
 
 adminRouter.post("/create/course",function(req,res){
