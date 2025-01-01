@@ -1,3 +1,5 @@
+require('dotenv').config()
+console.log(process.env.MONGO_URL)
 const express = require('express');
 const { userRouter } = require('./routes/user');
 const { adminRouter } = require('./routes/admin');
@@ -12,7 +14,7 @@ app.use("/api/course",courseRouter);
 
 
 async function main(){
-    await mongoose.connect("mongodb+srv://sachinxdev07:IkA87AEeDLLux9be@cluster0.3brdh.mongodb.net/onlylearner-app")
+    await mongoose.connect(process.env.MONGO_URL)
     app.listen(3000);
 }
 

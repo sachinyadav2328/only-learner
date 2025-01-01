@@ -1,8 +1,9 @@
 const {Router} = require("express");
-const { adminModel, userModel } = require("../db");
+const adminRouter = Router(); 
+const { adminModel, userModel, courseModel } = require("../db");
 const jwt = require('jsonwebtoken');
-const JWT_ADMIN_PASSWORD = "adminPassword"
-const adminRouter = Router();
+const{ JWT_ADMIN_PASSWORD} = require("../config")
+const {adminMiddleware} = require("../middleware/admin")
 
 adminRouter.post("/signup",async function(req,res){
     const {email, password,firstName,lastName} = req.body  // zod
@@ -24,7 +25,7 @@ adminRouter.post("/signin",async function(req,res){
     const {email, password } = req.body
   // password should hashes and we connect compare user provide password and the database
 
-    const response = await userModel.find({
+    const response = await userModel.findOne({
         email:email,
         passsword:password
     })
@@ -45,14 +46,28 @@ adminRouter.post("/signin",async function(req,res){
    
 })
 
-adminRouter.post("/create/course",function(req,res){
+adminRouter.post("/create/course",adminMiddleware,async function(req,res){
+    const adminId = req.userId;
+
+    const{title,description,imageUrl,price} = req.body;
+
+   const course =  await courseModel.create({
+        title , 
+        description, 
+        imageUrl,
+        price,
+        creatorId:adminId
+    })
+
     res.json({
-        message:"admin signin"
+        message:"Course created",
+        courseId: course._id
     })
 })
 
 
-adminRouter.put("/update/course",function(req,res){
+adminRouter.put("/update/course",adminMiddleware,async function(req,res){
+    
     res.json({
         message:"admin signin"
     })
