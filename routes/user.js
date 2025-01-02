@@ -2,7 +2,9 @@ const {Router} = require("express")
 const userRouter = Router();
 const jwt = require('jsonwebtoken');
 const {JWT_USER_PASSWORD} = require("../config")
-const { userModel } = require("../db");
+const { userModel, purchaseModel, courseModel } = require("../db");
+const { userMiddleware } = require("../middleware/user")
+
 //bycrpt , zod , jwttkon
 userRouter.post("/signup", function(req,res){
     const{ email, password,firstName,lastName } = req.body
@@ -41,9 +43,19 @@ userRouter.post("/signin", function(req,res){
    
 })
 
-userRouter.get("/purchases", function(req,res){
+userRouter.get("/purchases", userMiddleware,async function(req,res){
+   const userId = req.userId
+
+   const purchases = await purchaseModel.find({
+    userId
+   })
+
+   const courseData = await courseModel.find({
+    _id:{$in : purchases.map(x => x.courseId)}
+   })
     res.json({
-        message:"cou endpoint"
+        purchases, 
+        courseData
     })
 })
 

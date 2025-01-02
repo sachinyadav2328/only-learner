@@ -70,7 +70,7 @@ adminRouter.put("/update/course",adminMiddleware,async function(req,res){
     const adminId = req.userId;
 
     const{title,description,imageUrl,price,courseId} = req.body;
-
+   // need to put the check
    const course =  await courseModel.updateOne({
     _id: courseId,
     creatorId:adminId
@@ -93,7 +93,7 @@ adminRouter.get("/course/allcourses",adminMiddleware,async function(req,res){
     creatorId:adminId
    })
     res.json({
-        message:"Course created",
+        message:"all courses",
         courses
     })
 })
