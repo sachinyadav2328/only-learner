@@ -8,14 +8,14 @@ const Teastimonial = () => {
               <div className="relative z-10 space-y-6">
                 {/* <div className="absolute top-0 left-0rounded-full "></div> */}
                 <h2 className="text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-                  Try <span className="text-black">Mentorix</span>{' '}
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-500">For Free Today</span>
+                  Try <span className="text-black">OnlyLearn</span>{' '}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-500">Where knowledge meets opportunity.</span>
                 </h2>
                 <p className="text-2xl text-gray-600">
-                  Since we both value your{' '}
-                  <span className="text-blue-600 font-semibold">business</span>,<br />
-                  let's establish our{' '}
-                  <span className="text-indigo-600 font-semibold">agreement</span>.
+                Since we value you{' '}
+                  <span className="text-blue-600 font-semibold">passion for teaching</span>,<br />
+                  And{' '}
+                  <span className="text-indigo-600 font-semibold"> desire to learn</span>.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-600/25">
