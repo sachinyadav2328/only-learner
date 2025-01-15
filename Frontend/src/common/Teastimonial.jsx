@@ -7,18 +7,18 @@ const Teastimonial = () => {
             <div className="relative grid md:grid-cols-2 gap-12 items-center">
               <div className="relative z-10 space-y-6">
                 {/* <div className="absolute top-0 left-0rounded-full "></div> */}
-                <h2 className="text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                <h2 className="text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-800 to-green-700">
                   Try <span className="text-black">OnlyLearn</span>{' '}
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-500">Where knowledge meets opportunity.</span>
                 </h2>
                 <p className="text-2xl text-gray-600">
                 Since we value you{' '}
-                  <span className="text-blue-600 font-semibold">passion for teaching</span>,<br />
+                  <span className="text-green-800 font-semibold">passion for teaching</span>,<br />
                   And{' '}
-                  <span className="text-indigo-600 font-semibold"> desire to learn</span>.
+                  <span className="text-green-700 font-semibold"> desire to learn</span>.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-600/25">
+                  <button size="lg" className="px-3 py-3 rounded-lg font-semibold shadow-xl border  border-green-200 hover:bg-green-50">
                     About us
                   </button>
                   {/* <button size="lg" variant="outline" className="gap-2 border-2">
@@ -28,12 +28,12 @@ const Teastimonial = () => {
               </div>
               <div className="relative">
                 {/* <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-indigo-600/20 to-purple-600/20 rounded-full blur-3xl"></div> */}
-                <div className="relative bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                <div className="relative bg-white p-8 rounded-2xl shadow-xl border border-green-200">
                   <p className="text-xl text-gray-700 font-medium">
                     "This is the best product ever when it comes to making a course. Ten on ten recommended. I just can't wait to see what happens with this product."
                   </p>
                   <div className="mt-6 flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+                    <div className="h-12 w-12 rounded-full bg-gradient-to-r from-green-800 to-green-700"></div>
                     <span className="text-lg font-semibold not-italic">
                       Nayan Katiyara
                     </span>

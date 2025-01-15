@@ -13,10 +13,10 @@ const HeroSection = () => {
                 Empower Learning, Share Knowledge, and Earn with Ease.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 min-[400px]:gap-6">
-                <button size="lg" className="text-base bg-black hover:bg-black/90 text-white px-8 py-2 rounded-lg">
+                <button size="lg" className="text-base bg-gradient-to-r from-green-900 to-green-800 text-white px-8 py-2 rounded-lg">
                   Teach on Ol
                 </button>
-                <button size="lg"  className="text-base px-8 py-2 bg-gray-200 rounded-lg">
+                <button size="lg"  className="text-base px-8 py-2 border border-green-200 hover:bg-green-50 rounded-lg">
                Explore
                 </button>
               </div>
