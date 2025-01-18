@@ -3,7 +3,7 @@ import React from 'react'
 const NavBar = () => {
   return (
     <div>
-        <nav className=' bg-gradient-to-b from-green-700 to-white shadow-white '>
+        <nav className='border-b-2 sticky'>
             <div className='flex justify-around items-center gap-40 p-2'>
             <div>
                 <h1 className='text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-900 to-green-800'>OnlyLearn</h1>

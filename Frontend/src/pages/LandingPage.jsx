@@ -9,7 +9,6 @@ import StudentSection from '../common/StudentSection'
 const LandingPage = () => {
   return (
     <div>
-    <NavBar/>
     <HeroSection/>
     {/* HOW ITS WORKS SECTION */}
     <section className="container mx-auto px-4 py-24 md:px-6">
@@ -28,7 +27,6 @@ const LandingPage = () => {
         </div>
         <Teastimonial/>
     </section>
-    <Footer/>
     </div>
   )
 }

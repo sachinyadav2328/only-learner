@@ -33,7 +33,7 @@ const StudentSection = () => {
         <button className="mt-8 px-3 py-3 rounded-lg font-semibold shadow-xl border  border-green-200 hover:bg-green-50" size="lg">Start Learning</button>
       </div>
       <div className="md:w-1/2">
-        <img src="/placeholder.svg" alt="Student Learning" className="rounded-lg shadow-2xl" width={500} height={300} />
+        {/* <img src="/placeholder.svg" alt="Student Learning" className="rounded-lg shadow-2xl" width={500} height={300} /> */}
       </div>
     </div>
   </section></div>
